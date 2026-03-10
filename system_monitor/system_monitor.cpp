@@ -2,7 +2,6 @@
 #include <fstream>
 
 
-
 std::string RAM_usage(){
     std::ifstream meminf("/proc/meminfo");
     std::string line;
@@ -11,10 +10,10 @@ std::string RAM_usage(){
         throw std::runtime_error("Error: can't open meminfo");
     }
     while (std::getline(meminf, line)) {
-        if(line.find("MemTotal: " == 0)){
+        if (line.find("MemTotal:") == 0){
             sscanf(line.c_str(), "MemTotal: %ld", &total);
         }
-        if(line.find("MemAvailable: " == 0)){
+        if( line.find("MemAvailable: ") == 0){
             sscanf(line.c_str(), "MemAvailable: %ld", &available);
         }
     }
