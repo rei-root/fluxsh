@@ -11,10 +11,9 @@ int main(){
     getcwd(cwd, sizeof(cwd));
 
 while(true){
-    std::cout << name << " <~> " << "[RAM " << RAM_usage() << " || " << "CPU " << "" << "] " << cwd << "\n";
+    std::cout << name << " <~> " << "[RAM " << RAM_usage() << " || " << "CPU " << CPU_usage() << "] " << cwd << "\n";
     std::cout << "> ";
     getline(std::cin, command);
     system(command.c_str());
-}
-
+    }
 }
