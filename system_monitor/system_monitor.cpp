@@ -63,6 +63,10 @@ std::string CPU_usage(){
     long total_delta = total_2 - total_1;
     long idle_delta = idle_2 - idle_1;
 
+    if(total_delta == 0){
+        return "0.00%";
+    }
+
     //Высчитываем использование CPU
     double cpu_usage = ((double)total_delta - idle_delta) / total_delta * 100;
 
